@@ -5,5 +5,40 @@ Python Interview Questions:
 3. Different ways to delete element from list
 4. What is list and Tuple and difference between them.
 5. Dict Vs Set.
-6. List Comprehension
-8. 
+6. List Comprehension.
+8. Find given number is prime or not. 
+9. Fine factorial of a number. 
+10. Space check if the given string is palindrome or not. 
+11. Space create empty data frame. 
+12. Python array versus list.
+
+
+
+
+
+================================================
+Answers:
+
+#3
+
+a=[1,2,3,4,2,5,3]
+#pop
+a.pop()
+print(a)
+# remove
+a.remove(2)
+print(a)
+# del deletes based on position
+del a[1]
+print(a)
+# list comprehension
+a = [ele for ele in a if ele != 5]
+print(a)
+# convert to set 
+s=set(a)
+print(s)
+s.discard(4)
+print(s)
+
+*************************************************
+
