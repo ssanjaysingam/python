@@ -1,0 +1,18 @@
+🚀 Optimizing Spark Jobs: From 20,000 DPU Hours to 55 DPU Hours!
+I'm excited to share a recent optimization we achieved on our production job running on AWS Glue, which originally consumed 20,281 DPU hours. By simply rewriting PySpark SQL syntax into PySpark DataFrame API, I was able to reduce the runtime to just 55 DPU hours!
+
+Key Takeaways:
+Switching to PySpark DataFrame API: 
+The DataFrame API allows for more fine-grained control over optimizations like broadcast joins, partitioning, and caching, which improved memory usage and reduced the need for expensive shuffles.
+
+Why AQE (Adaptive Query Execution) Didn't Fully Optimize PySpark SQL:
+PySpark SQL adds an overhead because Spark has to parse and convert SQL queries into logical plans before executing them, which limits AQE’s effectiveness.
+DataFrame API makes operations explicit, allowing AQE to dynamically optimize operations like shuffles, join strategies, and partitioning more effectively.
+Using broadcast joins with the DataFrame API ensured that smaller datasets were joined efficiently, avoiding costly shuffles that PySpark SQL didn't handle as well.
+
+Results:
+Before Optimization: 20,281 DPU hours
+After Optimization: 55 DPU hours
+Cost Savings: 💸 Massive!
+
+It’s incredible how a relatively small change—switching from SQL-based operations to the DataFrame API—made such a huge difference in job performance and cost savings. I encourage anyone facing performance issues with Spark to explore the DataFrame API for more efficient control over their Spark jobs.
